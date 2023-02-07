@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Currency calculator</h1>
+        </div>
+
+        <div class="form">
+            <h1>Select the currency</h1>
+            
+            <form method="post" action="/">
+              <label for="code">Choose a currency:</label>
+              <select name="code" id="code">
+                <option value="USD">USD</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="EUR">EUR</option>
+                <option value="HUF">HUF</option>
+                <option value="CHF">CHF</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="CZK">CZK</option>
+                <option value="DKK">DKK</option>
+                <option value="NOK">NOK</option>
+                <option value="SEK">SEK</option>
+                <option value="XDR">XDR</option>
+              </select>
+              <br><br>
+          </div>
+
+          <div class="sum">    
+            <label for="sum">Input a necessary sum of currency:</label>
+            <label for="sum"> </label>
+            <input type="text" id="sum" name="sum">
+             <br><br>
+           </div>  
+
+           <div class="action">   
+                  <label for="action">Choose an action:</label>
+                  <select name="action" id="action">
+                    <option value="Bid">Bid</option>
+                    <option value="Ask">Ask</option>
+                  </select>
+                  <br><br>
+           </div>
+
+           <div class="submit">  
+              </select>
+              <input type="submit" value="Submit">
+              <p>Click the "Submit" button and the form-data will calculate the necessary sum of currency</p>
+          </div>
+            
+        </div>
+
+</body>
+</html>
