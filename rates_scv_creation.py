@@ -2,18 +2,13 @@ import csv
 import json
 import requests
 
-response = requests.get("http://api.nbp.pl/api/exchangerates/tables/C?format=json")
-data = response.json()
+def get_rates():
+    response = requests.get("http://api.nbp.pl/api/exchangerates/tables/C?format=json")
+    data = response.json()
+    return data[0]['rates']
 
-data_json = json.loads(json.dumps(data))
-
-rates = {}
-
-def rates():
-    for data in data_json:
-        rates = data['rates']    
-
-    with open('rates.csv', 'w') as csvfile:
+def save_rates_to_csv(rates):
+    with open('rates.csv', 'w', newline='') as csvfile:
         fieldnames = ['currency', 'code', 'bid', 'ask']
         writer = csv.DictWriter(csvfile, delimiter=';', fieldnames=fieldnames)
         writer.writeheader()
@@ -23,4 +18,5 @@ def rates():
                               'bid': rate["bid"], 
                               'ask': rate["ask"]})
 
-rates()
+rates = get_rates()
+save_rates_to_csv(rates)
