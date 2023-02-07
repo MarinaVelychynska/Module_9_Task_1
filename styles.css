@@ -1,0 +1,15 @@
+.header {
+    font-weight: bold;
+    font-size: xx-large; 
+    color:black;
+    background-color: antiquewhite;
+    padding-left: 9cm;
+ }
+ 
+.form {
+    font-weight: bold;
+    font-size: x-large; 
+    color:black;
+    background-color: antiquewhite;
+    padding-left: 9cm;
+ }
