@@ -2,6 +2,7 @@ import csv
 import json
 import requests
 
+
 def get_rates():
     response = requests.get("http://api.nbp.pl/api/exchangerates/tables/C?format=json")
     data = response.json()
