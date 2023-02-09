@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main">
         <div class="header">
             <h1>Currency calculator</h1>
         </div>
@@ -46,8 +45,8 @@
            <div class="action">   
                   <label for="action">Choose an action:</label>
                   <select name="action" id="action">
-                    <option value="Bid">Bid</option>
-                    <option value="Ask">Ask</option>
+                    <option value="Bid">bid</option>
+                    <option value="Ask">ask</option>
                   </select>
                   <br><br>
            </div>
@@ -55,10 +54,9 @@
            <div class="submit">  
               </select>
               <input type="submit" value="Submit">
-              <p>Click the "Submit" button and the form-data will calculate the necessary sum of currency</p>
+              <p>Result: {{result}}</p>
           </div>
-            
-        </div>
+        </form>
 
 </body>
 </html>

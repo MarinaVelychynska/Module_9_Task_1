@@ -12,7 +12,7 @@ def open_csv():
             code = row['code']
             bid = float(row['bid'])
             ask = float(row['ask'])
-            rates[currency] = (code, bid, ask)
+            rates[code] = (currency, bid, ask)
     return rates
 
 @app.route("/", methods=["GET", "POST"])
@@ -22,14 +22,13 @@ def currency():
 
     if request.method == "POST":
         code = request.form['code']
-        sum = float(request.form['sum'])
-        action = request.form['action']
+        sum = request.form['sum']
+
         if code in rates:
-            code, bid, ask = rates[code]
-        if action == 'ask':
-            result = sum * ask
-        elif action == 'bid':
-            result = sum * bid
+            currency, bid, ask = rates[code]
+        
+        calculation = float(sum) * float(ask)
+        result = f"{calculation:.2f}"
         
     return render_template('currency_calculator.html', result=result)
 
