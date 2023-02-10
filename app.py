@@ -18,6 +18,7 @@ def open_csv():
 @app.route("/", methods=["GET", "POST"])
 def currency():
     rates = open_csv()
+    codes = rates.keys()
     result = None
 
     if request.method == "POST":
@@ -30,7 +31,7 @@ def currency():
         calculation = float(sum) * float(ask)
         result = f"{calculation:.2f}"
         
-    return render_template('currency_calculator.html', result=result)
+    return render_template('currency_calculator.html', codes=codes, result=result)
 
 
 if __name__ == '__main__':
